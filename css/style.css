@@ -1,0 +1,126 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.game-board{
+    width: 100%;
+    height: 500px;
+    border-bottom: 15px solid rgb(35, 160, 35);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: #87CEEB;
+}
+
+.score{
+    position: absolute;
+    background: green;
+    padding: 8px 16px;
+    border-radius: 1em;
+    font-weight: bold;
+    color: antiquewhite;
+    right: 20px;
+    top: 20px;
+}
+
+.pipe{
+    position: absolute;
+    bottom: -5px;
+    width: 80px;
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+.mario-walking{
+    position: absolute;
+    width: 150px;
+    bottom: 0;
+}
+
+.clouds{
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 10s linear infinite;
+}
+
+.jump{
+    animation: mario-jump 500ms ease-out ;
+}
+
+.game-over-board{
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    display: none;
+}
+
+.game-over-board button,
+.game-over-board p{
+    background: green;
+    margin-bottom: 8px;
+    padding: 8px;
+    width: 250px;
+    text-align: center
+}
+
+.game-over-board .game-over,
+.game-over-board button{
+    font-family: 'Gajraj One', cursive;
+}
+
+.game-over-board .pontuacao{
+    font-family: 'Roboto Mono', monospace;
+}
+
+.game-over-board button{
+    border: none;
+}
+
+.game-over-board button:hover{
+    background: greenyellow;
+    cursor: pointer;
+}
+
+@keyframes pipe-animation{
+    from {
+        right: -80px;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes mario-jump {
+    0%{
+        bottom: 0;
+    }
+
+    40%{
+        bottom: 180px;
+    }
+
+    50%{
+        bottom: 180px;
+    }
+
+    60%{
+        bottom: 180px;
+    }
+
+    100%{
+        bottom: 0px;
+    }
+    
+}
+
+@keyframes clouds-animation {
+    from{
+        right: -550px;
+    }
+
+    to{
+        right: 100% 
+    }
+}
